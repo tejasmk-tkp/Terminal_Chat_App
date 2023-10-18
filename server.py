@@ -19,7 +19,7 @@ def handle_client(client_socket):
 
             print(f"Received from client: {message}")
 
-            response = "Message received: " + message
+            response = "(Received)"
             client_socket.send(response.encode('utf-8'))
 
             for other_client in connected_clients:
@@ -36,7 +36,7 @@ def handle_client(client_socket):
         connected_clients.remove(client_socket)
         client_socket.close()
 
-server_ip = '127.0.0.1'
+server_ip = input("Enter Server IP Address: ")
 server_port = 8080
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

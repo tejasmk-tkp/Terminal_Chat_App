@@ -17,7 +17,7 @@ def receive_message():
         message = data.decode('utf-8')
         print(f"Other: {message}")
 
-server_ip = '127.0.0.1'
+server_ip = input("Enter Server IP Address: ")
 server_port = 8080
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
