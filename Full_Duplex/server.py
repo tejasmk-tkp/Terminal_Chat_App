@@ -36,7 +36,7 @@ def handle_client(client_socket):
         connected_clients.remove(client_socket)
         client_socket.close()
 
-server_ip = input("Enter Server IP Address: ")
+server_ip = '0.0.0.0' #input("Enter Server IP Address: ")
 server_port = 8080
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
