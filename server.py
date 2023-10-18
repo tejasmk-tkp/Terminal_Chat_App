@@ -1,11 +1,16 @@
 import socket
 import threading
 
+connected_clients = []
+
 def handle_client(client_socket):
+    
+    connected_clients.append(client_socket)
+
     try:
         while True:
             data = client_socket.recv(1024)
-
+            
             if not data:
                 print("Client disconnected")
                 break
@@ -28,9 +33,10 @@ def handle_client(client_socket):
         print(f"Client error: {e}")
 
     finally:
+        connected_clients.remove(client_socket)
         client_socket.close()
 
-server_ip = '192.168.177.229'
+server_ip = '127.0.0.1'
 server_port = 8080
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

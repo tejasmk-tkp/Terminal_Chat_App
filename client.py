@@ -11,13 +11,13 @@ def receive_message():
         data = client_socket.recv(1024)
         
         if not data:
-            print("Server dissconnected")
+            #print("Server dissconnected")
             break
         
         message = data.decode('utf-8')
         print(f"Other: {message}")
 
-server_ip = '192.168.177.229'
+server_ip = '127.0.0.1'
 server_port = 8080
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
