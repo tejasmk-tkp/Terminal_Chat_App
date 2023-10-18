@@ -18,7 +18,9 @@ def receive_message():
         print(f"Other: {message}")
 
 server_ip = input("Enter Server IP Address: ")
-server_port = 8080
+server_port = 12345
+name = input("Enter your name: ")
+client_socket.send(user_name.encode('utf-8'))
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((server_ip, server_port))
